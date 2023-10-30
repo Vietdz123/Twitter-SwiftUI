@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SlideMenuView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 32) {
@@ -72,11 +74,11 @@ struct SlideMenuView: View {
                         SlideMenuOptionRowView(option: option)
                     }
                 case .logout:
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
+                    Button(action: {
+                        viewModel.signOut()
+                    }, label: {
                         SlideMenuOptionRowView(option: option)
-                    }
+                    })
                 }
                 
             }
