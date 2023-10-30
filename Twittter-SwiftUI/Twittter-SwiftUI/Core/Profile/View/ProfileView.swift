@@ -65,11 +65,6 @@ extension ProfileView {
                     }, label: {
                         
 
-<<<<<<< HEAD
-        }
-        .frame(height: 96)
-        .background(.yellow)
-=======
                         Image(systemName: "arrow.left")
                             .resizable()
                             .scaledToFill()
@@ -91,7 +86,6 @@ extension ProfileView {
 
         .navigationBarBackButtonHidden(true)
         
->>>>>>> 65dc059c870e101818ac0da1a21f539a0cc64295
         
         
     }

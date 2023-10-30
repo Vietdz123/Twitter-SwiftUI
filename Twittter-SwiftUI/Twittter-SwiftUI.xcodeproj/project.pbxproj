@@ -41,6 +41,7 @@
 		D1EC4C2C2AEE995900D3C554 /* SlideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC4C2B2AEE995900D3C554 /* SlideMenuRowView.swift */; };
 		D1EC4C2E2AEE996600D3C554 /* SlideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC4C2D2AEE996600D3C554 /* SlideMenuViewModel.swift */; };
 		D1EC4C302AEEA2DD00D3C554 /* SlideMenuOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC4C2F2AEEA2DD00D3C554 /* SlideMenuOptionRowView.swift */; };
+		D1EC4C332AEFF12C00D3C554 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC4C322AEFF12C00D3C554 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		D1EC4C2B2AEE995900D3C554 /* SlideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuRowView.swift; sourceTree = "<group>"; };
 		D1EC4C2D2AEE996600D3C554 /* SlideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewModel.swift; sourceTree = "<group>"; };
 		D1EC4C2F2AEEA2DD00D3C554 /* SlideMenuOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuOptionRowView.swift; sourceTree = "<group>"; };
+		D1EC4C322AEFF12C00D3C554 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		D1EC4BD52AEE5F0500D3C554 /* Twittter-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				D1EC4C312AEFF11E00D3C554 /* Ulitis */,
 				D1EC4C042AEE5F3600D3C554 /* Core */,
 				D1EC4C032AEE5F3100D3C554 /* Extensions */,
 				D1EC4C022AEE5F2500D3C554 /* Service */,
@@ -438,6 +441,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D1EC4C312AEFF11E00D3C554 /* Ulitis */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC4C322AEFF12C00D3C554 /* ImagePicker.swift */,
+			);
+			path = Ulitis;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -580,6 +591,7 @@
 			files = (
 				D1EC4C132AEE70BB00D3C554 /* NotifìcationView.swift in Sources */,
 				D1EC4C1E2AEE71CD00D3C554 /* ProfileView.swift in Sources */,
+				D1EC4C332AEFF12C00D3C554 /* ImagePicker.swift in Sources */,
 				D1EC4C2C2AEE995900D3C554 /* SlideMenuRowView.swift in Sources */,
 				04163D152AEF712000832EEE /* RegistrationView.swift in Sources */,
 				D1EC4BD92AEE5F0500D3C554 /* ContentView.swift in Sources */,
