@@ -70,6 +70,7 @@ extension ProfileView {
 
         }
         .frame(height: 96)
+        .background(.yellow)
         
         
     }
