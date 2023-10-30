@@ -15,23 +15,31 @@ struct ProfileView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 12) {
+        
+        ZStack {
             
-            headerView
             
-            actionButtons
             
-            infoUserView
-            
-            tweetFilterBarView
-            
+            VStack(alignment: .leading, spacing: 12) {
+                
+                headerView
+                
+                actionButtons
+                
+                infoUserView
+                
+                tweetFilterBarView
+                
 
-            tweetView
-            
-            Spacer()
-            
+                tweetView
+                
+                Spacer()
+                
+            }
+            .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity)
+        
+
         
     }
 }
@@ -44,32 +52,40 @@ struct ProfileView: View {
 extension ProfileView {
     
     var headerView: some View {
-        ZStack(alignment: .bottomLeading) {
-            
-            Color(.systemBlue)
-                .ignoresSafeArea()
-            
-            VStack(alignment: .center, spacing: 15) {
+            ZStack(alignment: .topLeading) {
                 
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Image(systemName: "arrow.left")
-                        .resizable()
-                        .frame(width: 20, height: 16)
-                        .foregroundColor(.white)
-//                        .offset(x: 16, y: 24)
-                        .frame(width: 90, height: 90)
-                        .background(.red)
-                })
+                Color(.systemBlue)
+                    .ignoresSafeArea()
                 
-                Circle()
-                    .frame(width: 72, height: 72)
-                    .offset(x: 18, y: 24)
-            }
+                VStack(alignment: .center, spacing: 15) {
+                    
+                    Button(action: {
+                        print("DEBUG: qqq")
+                        dismiss()
+                    }, label: {
+                        
 
-        }
-        .frame(height: 96)
+                        Image(systemName: "arrow.left")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 20, height: 16)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .padding(.leading, 25)
+                            
+                    })
+
+                    
+                    Circle()
+                        .frame(width: 72, height: 72)
+                        .offset(x: 18, y: 24)
+                }
+
+            }
+            .frame(height: 96)
+
+        .navigationBarBackButtonHidden(true)
+        
         
         
     }
