@@ -5,6 +5,7 @@
 //  Created by Three Bros on 29/10/2023.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct ContentView: View {
@@ -71,15 +72,27 @@ extension ContentView {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Circle()
-                        .frame(width: 32, height: 32)
-                        .foregroundColor(.blue)
-                        .onTapGesture {
+                    if let user = viewModel.user {
+                        
+                        Button(action: {
                             
-                            withAnimation(.easeInOut) {
-                                self.showSlideMenu.toggle()
-                            }
-                        }
+                        }, label: {
+                            KFImage(URL(string: user.profileImageUrl))
+                                .resizable()
+                                .frame(width: 32, height: 32)
+                                .clipShape(Circle())
+                                .onTapGesture {
+                                    
+                                    withAnimation(.easeInOut) {
+                                        self.showSlideMenu.toggle()
+                                    }
+                                }
+                        })
+                        
+        
+                    }
+                    
+   
 
                 }
                 

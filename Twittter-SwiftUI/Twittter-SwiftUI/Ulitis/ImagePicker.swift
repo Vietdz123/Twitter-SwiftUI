@@ -29,7 +29,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 
-//extension ImagePicker {
+extension ImagePicker {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         
@@ -48,4 +48,4 @@ struct ImagePicker: UIViewControllerRepresentable {
         
     }
     
-//}
+}

@@ -6,87 +6,94 @@
 //
 
 import SwiftUI
+import Kingfisher
+
 
 struct SlideMenuView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 32) {
-            VStack(alignment: .leading, spacing: 16) {
-                Circle()
-                    .frame(width: 48, height: 48)
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Bruce Wayne")
-                        .font(.headline).bold()
+        if let user = viewModel.user {
+            VStack(alignment: .leading, spacing: 32) {
+                VStack(alignment: .leading, spacing: 16) {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .clipShape(Circle())
+                        .frame(width: 48, height: 48, alignment: .center)
                     
-                    Text("@Batman")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                
-                HStack(alignment: .center, spacing: 8) {
-                    HStack(alignment: .center, spacing: 8) {
-                        Text("45")
-                            .font(.subheadline)
-                            .bold()
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(user.fullname)
+                            .font(.headline).bold()
                         
-                        Text("Followers")
+                        Text("@\(user.username)")
                             .font(.caption)
-                            .foregroundStyle(.gray)
+                            .foregroundColor(.gray)
                     }
                     
                     HStack(alignment: .center, spacing: 8) {
-                        Text("45")
-                            .font(.subheadline)
-                            .bold()
+                        HStack(alignment: .center, spacing: 8) {
+                            Text("45")
+                                .font(.subheadline)
+                                .bold()
+                            
+                            Text("Followers")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
                         
-                        Text("Followers")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
+                        HStack(alignment: .center, spacing: 8) {
+                            Text("45")
+                                .font(.subheadline)
+                                .bold()
+                            
+                            Text("Followers")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
                     }
-                }
-                
+                    
 
-            }
-            .padding(.leading)
-            
-            ForEach(SlideMenuViewModel.allCases, id: \.rawValue) { option in
-                switch option {
-                case .profile:
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        SlideMenuOptionRowView(option: option)
-                    }
-
-                case .lists:
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        SlideMenuOptionRowView(option: option)
-                    }
-                case .bookmarks:
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        SlideMenuOptionRowView(option: option)
-                    }
-                case .logout:
-                    Button(action: {
-                        viewModel.signOut()
-                    }, label: {
-                        SlideMenuOptionRowView(option: option)
-                    })
                 }
+                .padding(.leading)
                 
+                ForEach(SlideMenuViewModel.allCases, id: \.rawValue) { option in
+                    switch option {
+                    case .profile:
+                        NavigationLink {
+                            ProfileView()
+                        } label: {
+                            SlideMenuOptionRowView(option: option)
+                        }
+
+                    case .lists:
+                        NavigationLink {
+                            ProfileView()
+                        } label: {
+                            SlideMenuOptionRowView(option: option)
+                        }
+                    case .bookmarks:
+                        NavigationLink {
+                            ProfileView()
+                        } label: {
+                            SlideMenuOptionRowView(option: option)
+                        }
+                    case .logout:
+                        Button(action: {
+                            viewModel.signOut()
+                        }, label: {
+                            SlideMenuOptionRowView(option: option)
+                        })
+                    }
+                    
+                }
+                .frame(height: 40)
+                .padding(.horizontal)
+                .padding(.vertical, 4)
+                
+                Spacer()
             }
-            .frame(height: 40)
-            .padding(.horizontal)
-            .padding(.vertical, 4)
-            
-            Spacer()
         }
         
     }
